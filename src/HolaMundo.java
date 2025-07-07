@@ -19,7 +19,7 @@ public class HolaMundo {
 		int numero; //Declaración
 		numero = 9;   //Inicialización
 		
-		int edad = 24; //Declarar e inicializar
+		int edad = 25; //Declarar e inicializar
 		
 		// syso
 		
