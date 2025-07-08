@@ -3,7 +3,11 @@ public class HolaMundo {
 	
 	public static void main (String [] args ) {
 		
+<<<<<<< HEAD
 		System.out.println("Hola Getafe Juan Alberto 10");
+=======
+		System.out.println("Hola Getafe Juan Alberto GitHub");
+>>>>>>> branch 'main' of https://github.com/japan8x/cursojava2025.git
 		
 		// Comentario de línea
 		
@@ -20,9 +24,19 @@ public class HolaMundo {
 		numero = 9;   //Inicialización
 		
 		int edad = 25; //Declarar e inicializar
+	
+		
+		
+		
+		
+		
+		
+		
 		
 		System.out.println("Repositorio Local");
 		
+		System.out.println("GitHUb");
+
 		
 		System.out.println("10" + numero + edad);
 		System.out.println("resultado: " + (numero + edad) );
