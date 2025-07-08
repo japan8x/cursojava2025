@@ -3,11 +3,9 @@ public class HolaMundo {
 	
 	public static void main (String [] args ) {
 		
-<<<<<<< HEAD
 		System.out.println("Hola Getafe Juan Alberto 10");
-=======
 		System.out.println("Hola Getafe Juan Alberto GitHub");
->>>>>>> branch 'main' of https://github.com/japan8x/cursojava2025.git
+
 		
 		// Comentario de línea
 		
