@@ -128,6 +128,7 @@ public class Colegio {
 					
 					for (int j=0;j<aulas[i].length;j++) {	
 			
+						
 				        if ((aulas[i][j] != null) && (aulas[i][j].contains(cadena))) {
 			        	    System.out.println("\n¿Borrar Nombre del Alumno " + (j+1) + " del aula " + aulas[i][j] + "?\n");
 							if (aulas[i][j].equals(cadena)) {	
