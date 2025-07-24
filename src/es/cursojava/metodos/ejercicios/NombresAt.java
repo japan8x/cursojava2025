@@ -16,7 +16,7 @@ public class NombresAt {
 		
 		String nombre[] = new String[pal];
 		
-		System.out.println(numpal + "  " + pal + "   " + "  " + lon + "  " + ale);
+		//System.out.println(numpal + "  " + pal + "   " + "  " + lon + "  " + ale);
 		
 		for(int i=0;i<pal;i++) {
 			
@@ -34,12 +34,12 @@ public class NombresAt {
 					
 		}
 		
-		nombre[2] = "Afgt";
-		nombre[6] = "A t";
+		//nombre[2] = "Afgt";
+		//nombre[3] = "Ast";
 		
 		numpal = NombresAt.numeroAt(nombre);
 		
-		System.out.println(numpal);
+		//System.out.println(numpal);
 		
 		NombresAt.mostrarNombres(nombre);
 
@@ -56,9 +56,7 @@ public class NombresAt {
 	}
 	
 	public static int numeroAt(String nombres[]) {
-		
-		//int reply = 0;
-		
+			
 		char cara;
 		
 		int contador = 0;
@@ -67,13 +65,17 @@ public class NombresAt {
 			
 			cara = nombres[i].charAt(0);
 			
-			System.out.println(cara + " - " + nombres[i].contains("t"));
+			//System.out.println(nombres[i] + " === " + (cara == 'A') + " - " + nombres[i].contains("t"));
 			
 			for(int j=0;j<nombres[i].length();j++) {
 				
-				if (((cara.equals('A')) && (nombres[i].contains("t"))) {
+				if ((cara == 'A') && (nombres[i].contains("t"))) {
 					
 					contador++;
+					
+					break;
+					
+					//System.out.println("Número: " + contador);
 					
 				}
 				
@@ -84,6 +86,7 @@ public class NombresAt {
 		System.out.println("Número: " + contador);
 		
 		return contador;
+		
 	}
 
 }

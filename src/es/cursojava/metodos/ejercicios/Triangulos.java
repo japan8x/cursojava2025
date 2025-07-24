@@ -11,11 +11,11 @@ public class Triangulos {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("\nIntroduce la base del triángulo rectángulo: \n");
+		System.out.println("\nIntroduce la base del rectángulo: \n");
 		scan = new Scanner(System.in);
 		int b = scan.nextInt();
 		
-		System.out.println("\nIntroduce la altura del triángulo rectángulo: \n");
+		System.out.println("\nIntroduce la altura del rectángulo: \n");
 		scan = new Scanner(System.in);
 		int a = scan.nextInt();
 		
@@ -35,9 +35,9 @@ public class Triangulos {
 		
 		double diagonal = 0;
 		
-		// Area = Base x Altura / 2
+		// Area = Base x Altura 
 		
-		area = base * altura / 2;
+		area = base * altura;
 		
 		resultado += "A := " + area;
 		
