@@ -29,6 +29,9 @@ public class Ahorcado {
 		
 		do {
 			
+			System.out.println(oracion);
+			System.out.println(oracionoculta);
+			
 			String cadena = "";
 			
 			letra = pideLetra();
@@ -45,8 +48,8 @@ public class Ahorcado {
 				
 			}
 			
-			System.out.println(oracion);
-			System.out.println(oracionoculta);			
+			//System.out.println(oracion);
+			//System.out.println(oracionoculta);			
 			
 		} while (letra!='0');
 		
@@ -72,7 +75,7 @@ public class Ahorcado {
 		String frase = "";
 		String l = "";
 		
-		for (int i=1;i<f.length();i++) {
+		for (int i=0;i<f.length();i++) {
 			
 			l = f.substring(i);
 			
