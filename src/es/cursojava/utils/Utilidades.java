@@ -55,5 +55,11 @@ public class Utilidades {
 		return palabra;
 
 	}
+	
+    public static void clearScreen() {
+        // Código ANSI para limpiar la pantalla y mover el cursor a la esquina superior izquierda
+        System.out.print("\033[2J");
+        System.out.print("\033[H"); // Mueve el cursor a la posición 1,1
+    }
 
 }

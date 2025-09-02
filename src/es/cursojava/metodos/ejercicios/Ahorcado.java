@@ -2,10 +2,16 @@ package es.cursojava.metodos.ejercicios;
 
 import java.util.Scanner;
 
+import es.cursojava.utils.Utilidades;
+
 public class Ahorcado {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		boolean resuelto = false;
+		
+		int contadorfallos = 0;
 		
 		char letra = '0';
 		
@@ -27,7 +33,14 @@ public class Ahorcado {
 		String oracion = generarFrase(sujetos) + " " + generarFrase(verbos) + " " + generarFrase(complementos);
 		String oracionoculta = generarFraseOculta(oracion);
 		
+		oracion = oracion.toUpperCase();
+		oracionoculta = oracionoculta.toUpperCase();
+		
+		oracion = oracion.replace(' ', '_');
+		
 		do {
+			
+			Utilidades.clearScreen();
 			
 			System.out.println(oracion);
 			System.out.println(oracionoculta);
@@ -40,21 +53,42 @@ public class Ahorcado {
 			
 			if (oracion.contains(cadena)) {
 				
-				oracionoculta = sustituyeLetraEnFrase(letra,oracion);
+				oracionoculta = sustituyeLetraEnFrase(letra,oracion,oracionoculta);
 				
 			} else {
 				
-				System.out.println("¡Fallo en la letra elegida");
+				System.out.println("¡Fallo en la letra elegida!");
+				
+				++contadorfallos;
+				
+				System.out.println();				
+				System.out.println("Número de fallos = " + contadorfallos);
+				System.out.println();
+				
+				pintaAhorcado(contadorfallos);
+				
+			}
+			
+			if (oracionoculta.equals(oracion)) {
+				
+				resuelto = true;
 				
 			}
 			
 			//System.out.println(oracion);
-			//System.out.println(oracionoculta);			
+			//System.out.println(oracionoculta);
 			
-		} while (letra!='0');
+		} while ((contadorfallos<6) && (!resuelto));		
 		
-		System.out.println(oracion);
-		System.out.println(oracionoculta);
+		if (contadorfallos>=6) {
+			
+			System.out.println("¡Ahorcado!");
+			
+		} else {
+			
+			System.out.println("¡Te salvaste de ser ahorcado!");
+			
+		}
 		
 	}
 	
@@ -70,28 +104,29 @@ public class Ahorcado {
 		
 	}
 	
-	public static String generarFraseOculta(String f) {
+	public static String generarFraseOculta(String frase) {
 		
-		String frase = "";
-		String l = "";
+		String f = "";
+		char l;
 		
-		for (int i=0;i<f.length();i++) {
+		for (int i=0;i<frase.length();i++) {
 			
-			l = f.substring(i);
+			l = frase.charAt(i);
 			
-			if (l == " ") {
+			if (l == ' ') {
 				
-				frase += "_";
+				f += "_";
+				
 				
 			} else {
 				
-				frase += "-";
+				f += "-";
 				
 			}
 			
 		}
 		
-		return frase;
+		return f;
 		
 	}
 	
@@ -105,26 +140,49 @@ public class Ahorcado {
         
 	}
 	
-	public static String sustituyeLetraEnFrase(char letra, String frase) {
+	public static String sustituyeLetraEnFrase(char letra, String frase, String fraseoculta) {
 		
-		String ora = "";
+		String oracion = "";
 		
-		//Usando charAt e indexOf
 		for (int i=0; i<frase.length(); i++) {
 			
 			char caracter = frase.charAt(i);
 
-			if (caracter==letra && i==frase.indexOf(letra)) {
+			if (caracter==letra) // && i==frase.indexOf(letra)) 
+				{
 				//System.out.println("Posición "+i);
-				ora = frase.substring(0, i-1)+letra+frase.substring(i+1, frase.length()-1);
-				break;
+				fraseoculta = fraseoculta.substring(0, i)+letra+fraseoculta.substring(i+1, fraseoculta.length());
+				//break;
 				
 			}
 			
 		}
 		
-		return ora;
+		oracion = fraseoculta;
 		
+		return oracion;
+		
+	}
+	
+	public static void pintaAhorcado(int numerofallos) {
+		
+		String linea[] = new String[6];
+		
+		linea[0] = "  ╔════╦═══  ";
+		linea[1] = "  ║    O     ";
+		linea[2] = "  ║   ───    ";
+		linea[3] = "  ║    │     ";
+		linea[4] = "  ║   │ │    ";
+		linea[5] = "  ║          ";
+		 
+		for(int i=6-numerofallos;i<6;i++) {
+			
+			System.out.println(linea[i]);
+			
+		}
+		
+		System.out.println();
+			
 	}
 	
 }
