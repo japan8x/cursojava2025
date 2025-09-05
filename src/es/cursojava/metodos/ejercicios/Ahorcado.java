@@ -42,8 +42,12 @@ public class Ahorcado {
 			
 			Utilidades.clearScreen();
 			
-			System.out.println(oracion);
+			System.out.println("==========================");			
+			System.out.println("--- JUEGO DEL AHORCADO ---");
+			System.out.println("==========================");
+			System.out.println();
 			System.out.println(oracionoculta);
+			System.out.println();
 			
 			String cadena = "";
 			
@@ -89,6 +93,10 @@ public class Ahorcado {
 			System.out.println("¡Te salvaste de ser ahorcado!");
 			
 		}
+		
+		System.out.println();
+		System.out.println("Solución:");
+		System.out.println(oracion);
 		
 	}
 	
@@ -183,6 +191,14 @@ public class Ahorcado {
 		
 		System.out.println();
 			
+	}
+	
+	public static void showLetters(String letters) {
+		System.out.print("\nLas letras que has introducido son: ");
+		for (int i = 0; i < letters.length(); i++) {
+			System.out.print(letters.charAt(i)+" ");
+		}
+		System.out.println();
 	}
 	
 }
