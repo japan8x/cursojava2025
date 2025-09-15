@@ -69,7 +69,6 @@ public class Pelicula {
 	}
 
 	// METODOS
-
 	public void mostrarPelicula(Pelicula peli) {
 		System.out.println("Pelicula:\t" + pelicula + "\nClasificación:\t" + clasificaion + "\nDuración:\t"
 				+ this.duración + "\nPrecio:\t" + this.precio + "\nIdentificador:\t" + this.id);
