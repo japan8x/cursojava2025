@@ -14,7 +14,7 @@ public class Alumnos {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\n¿Cuántos alumnos tienes en clase?\n");
 		scan = new Scanner(System.in);
-		
+		 
 		int numero = scan.nextInt();
 		
 		int [] notas = new int[numero];
