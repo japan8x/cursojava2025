@@ -25,12 +25,17 @@ public class Market {
 
 	}
 	
-	private static void encender() {
+	private static void encender(Encendible e) {
+		
+		e.encender();
 		
 	}
 	
-	private static void apagar() {
+	private static void apagar(Apagable a) {
+		
+		a.apagar();
 		
 	}
+
 
 }

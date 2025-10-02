@@ -1,6 +1,6 @@
 package es.cursojava.interfaces.ejercicios;
 
-public abstract class ProductosEletronicos extends Producto {
+public abstract class ProductosElectronicos extends Producto {
 	
 	private String fechaFabricacion;
 
