@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.Set;
 
 import es.cursojava.interfaces.ejercicios.Alimentos;
+import es.cursojava.interfaces.ejercicios.Platanos;
 
 public class Compras {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Platanos a1 = new Platanos(1,"plátanos",12, "20251031");
 		
 	    List<Alimentos> listaAlimentos = new ArrayList();
 	    
