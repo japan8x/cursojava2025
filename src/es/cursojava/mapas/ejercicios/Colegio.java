@@ -1,12 +1,13 @@
 package es.cursojava.mapas.ejercicios;
 
 import java.security.KeyStore.Entry;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import es.cursojava.oo.Persona;
 import es.cursojava.utils.Utilidades;
 
 public class Colegio {
@@ -25,19 +26,34 @@ public class Colegio {
 		Alumno alumno6 = new Alumno("N6", "A6", "666F", 18, aula3);
 		Alumno alumno7 = new Alumno("N7", "A7", "777G", 15, aula3);
 		
-		Map<String, Alumno> alumnos = new HashMap();
+		List<Alumno> listaAula1 = new ArrayList();		
+		List<Alumno> listaAula2 = new ArrayList();		
+		List<Alumno> listaAula3 = new ArrayList();
 		
-		alumnos.put(alumno1.getDni(),alumno1);
-		alumnos.put(alumno2.getDni(),alumno2);
-		alumnos.put(alumno3.getDni(),alumno3);
-		alumnos.put(alumno4.getDni(),alumno4);
-		alumnos.put(alumno5.getDni(),alumno5);
-		alumnos.put(alumno6.getDni(),alumno6);
-		alumnos.put(alumno1.getDni(),alumno7);
+		listaAula1.add(alumno1);
+		listaAula1.add(alumno2);
+		listaAula2.add(alumno3);
+		listaAula3.add(alumno4);
+		listaAula3.add(alumno5);
+		listaAula3.add(alumno6);
+		listaAula3.add(alumno7);
 		
-//		Map<String, Aula> aulas = new HashMap();
+		//Map<String, Alumno> alumnos = new HashMap();
 		
-//		aulas.put(alumno1.getDni(), aula1);
+//		alumnos.put(alumno1.getDni(),alumno1);
+//		alumnos.put(alumno2.getDni(),alumno2);
+//		alumnos.put(alumno3.getDni(),alumno3);
+//		alumnos.put(alumno4.getDni(),alumno4);
+//		alumnos.put(alumno5.getDni(),alumno5);
+//		alumnos.put(alumno6.getDni(),alumno6);
+//		alumnos.put(alumno1.getDni(),alumno7);
+		
+		Map<Aula, List<Alumno>> aulas = new HashMap();
+		
+		aulas.put(aula1, listaAula1);
+		aulas.put(aula2, listaAula2);
+		aulas.put(aula3, listaAula3);
+		
 //		aulas.put(alumno2.getDni(), aula1);
 //		aulas.put(alumno3.getDni(), aula1);
 //		aulas.put(alumno4.getDni(), aula4);
@@ -46,31 +62,33 @@ public class Colegio {
 //		aulas.put(alumno7.getDni(), aula4);
 		
 		//Recupero los datos de una persona
-				String dni = Utilidades.pideDatoCadena("Introduce un dni");
-				Persona persona = personas.get(dni);
-				System.out.println(persona.getNombre());
-				
-				System.out.println("========== Todas las claves ==============");
-				//Obtengo todas las claves
-				Set<String> dnis = personas.keySet();
-				for (String dniPersona : dnis) {
-					System.out.println(dniPersona);
-				}
-				
-				
-				System.out.println("========== Todos los valores a partir de las claves ==============");
-				//Obtengo todos los valores a partir de las claves
-				for (String dniPersona : dnis) {
-					Persona personaValor = personas.get(dni);
-					System.out.println(personaValor.getNombre());
-				}
-				
-				System.out.println("========== Todos los valores de manera directa ==============");
-				//Obtengo todos los valores sin usar la clave
-				Collection<Persona> colPersonas = personas.values();
-				for (Persona persona2 : colPersonas) {
-					System.out.println(persona2.getNombre());
-				}
+		String a = Utilidades.pideDatoCadena("Introduce un aula: ");
+		//Alumno alumno = alumnos.get(dni);
+		List<Alumno> listado = aulas.get(a);
+		for (Alumno x : listado) {
+			System.out.println(x.getNombre());
+		}
+		
+		System.out.println("========== Todas las claves ==============");
+		//Obtengo todas las claves
+		Set<String> dnis = alumnos.keySet();
+		for (String dniPersona : dnis) {
+			System.out.println(dniPersona);
+		}
+			
+		System.out.println("========== Todos los valores a partir de las claves ==============");
+		//Obtengo todos los valores a partir de las claves
+		for (String dniPersona : dnis) {
+			Alumno alumnoValor = alumnos.get(dni);
+			System.out.println(alumnoValor.getNombre());
+		}
+		
+		System.out.println("========== Todos los valores de manera directa ==============");
+		//Obtengo todos los valores sin usar la clave
+		Collection<Alumno> colAlumno = alumnos.values();
+		for (Alumno alumnos : colAlumno) {
+			System.out.println(alumnos.getNombre());
+		}
 		
 	}
 	
