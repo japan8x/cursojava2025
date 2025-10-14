@@ -80,7 +80,7 @@ public class Colegio {
 		//Obtengo todos los valores a partir de las claves
 		for (String dniPersona : dnis) {
 			Alumno alumnoValor = alumnos.get(dni);
-			System.out.println(alumnoValor.getNombre());
+.out.println(alumnoValor.getNombre());
 		}
 		
 		System.out.println("========== Todos los valores de manera directa ==============");
